@@ -13,7 +13,6 @@ class TicketAnimation {
     required Duration duration,
     required Widget child,
     Alignment alignment = Alignment.center,
-    Curve curve = Curves.easeInOut,
   }) {
     final overlayState = Overlay.of(context);
 
@@ -23,7 +22,6 @@ class TicketAnimation {
       builder: (context) => _OverlayAnimationWidget(
         startAt: startAt,
         duration: duration,
-        curve: curve,
         alignment: alignment,
         child: child,
         onAnimationComplete: () {
@@ -41,12 +39,12 @@ class TicketAnimation {
 class _OverlayAnimationWidget extends StatefulWidget {
   final Duration duration;
   final double startAt;
-  final Curve curve;
+
   final Alignment alignment;
   final Widget child;
   final VoidCallback onAnimationComplete;
 
-  const _OverlayAnimationWidget({required this.duration, required this.curve, required this.alignment, required this.child, required this.onAnimationComplete, required this.startAt});
+  const _OverlayAnimationWidget({required this.duration, required this.alignment, required this.child, required this.onAnimationComplete, required this.startAt});
 
   @override
   State<_OverlayAnimationWidget> createState() => _OverlayAnimationWidgetState();
@@ -70,7 +68,7 @@ class _OverlayAnimationWidgetState extends State<_OverlayAnimationWidget> with S
     ).animate(
       CurvedAnimation(
         parent: _animationController,
-        curve: widget.curve,
+        curve: Curves.easeInOut,
       ),
     );
 
