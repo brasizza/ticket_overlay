@@ -1,7 +1,7 @@
 name: ticket_overlay
 description: "Package para efetuar uma animação que simula uma impressão de tickets POS."
-version: 0.0.1
-homepage: https://github.com/brasizza/ticket_overlay.gi
+version: 0.0.2
+homepage: https://github.com/brasizza/ticket_overlay.git
 
 environment:
   sdk: ^3.5.4
