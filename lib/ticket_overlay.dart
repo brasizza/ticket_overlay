@@ -76,10 +76,12 @@ class _OverlayAnimationWidget extends StatefulWidget {
   });
 
   @override
-  State<_OverlayAnimationWidget> createState() => _OverlayAnimationWidgetState();
+  State<_OverlayAnimationWidget> createState() =>
+      _OverlayAnimationWidgetState();
 }
 
-class _OverlayAnimationWidgetState extends State<_OverlayAnimationWidget> with SingleTickerProviderStateMixin {
+class _OverlayAnimationWidgetState extends State<_OverlayAnimationWidget>
+    with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _animation;
 

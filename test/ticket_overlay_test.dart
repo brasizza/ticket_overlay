@@ -3,7 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:ticket_overlay/ticket_overlay.dart';
 
 void main() {
-  testWidgets('OverlayAnimation correctly displays and removes overlay', (WidgetTester tester) async {
+  testWidgets('OverlayAnimation correctly displays and removes overlay',
+      (WidgetTester tester) async {
     // Define a key to identify the overlay content in the widget tree.
     const overlayKey = Key('OverlayContent');
 

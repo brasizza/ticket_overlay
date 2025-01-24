@@ -42,7 +42,10 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               ElevatedButton(
                 onPressed: () {
-                  TicketAnimation.show(context: context, duration: const Duration(seconds: 2), child: TicketAnimation.ticketDefault);
+                  TicketAnimation.show(
+                      context: context,
+                      duration: const Duration(seconds: 2),
+                      child: TicketAnimation.ticketDefault);
                 },
                 child: const Text(
                   'Default Ticket',
