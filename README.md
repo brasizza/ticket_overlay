@@ -1,39 +1,76 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Biblioteca Ticket Overlay
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
+[Read in English](README-en.md)
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
+Uma biblioteca Flutter para criar animações de ticket saindo de um aparelho POS, oferecendo uma integração fácil com sua aplicação. Baseada em `OverlayEntry`, permite exibir widgets personalizados com efeitos animados.
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+## Recursos
 
-## Features
+- **Shimmer Receipt Placeholder**: Um widget padrão com efeito shimmer para simular um recibo.
+- **Animação de Overlay**: API simples para exibir e animar widgets sobrepostos.
+- **Personalização**: Configure o alinhamento, duração e posição inicial da animação.
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+## Instalação
 
-## Getting started
+Adicione a biblioteca ao seu projeto incluindo-a no arquivo `pubspec.yaml`:
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+```yaml
+dependencies:
+  ticket_overlay: ^latest_version
 ```
 
-## Additional information
+Substitua `latest_version` pela versão mais recente disponível no [pub.dev](https://pub.dev/packages/ticket_overlay).
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+Execute o comando abaixo para baixar a dependência:
+
+```bash
+flutter pub get
+```
+
+## Uso
+
+### Exibindo uma Animação de Ticket
+
+Para exibir um widget como uma animação de ticket:
+
+```dart
+import 'package:ticket_overlay/ticket_overlay.dart';
+
+TicketAnimation.show(
+  context: context,
+  duration: const Duration(seconds: 3),
+  alignment: Alignment.center,
+  startAt: 0.5,
+  child: SeuWidgetPersonalizado(),
+);
+```
+
+### Placeholder Padrão
+
+Use o widget padrão de efeito shimmer para recibos:
+
+```dart
+Widget placeholderPadrao = TicketAnimation.ticketDefault;
+```
+
+## Referência da API
+
+### `TicketAnimation.show`
+
+Exibe um widget personalizado como um ticket animado.
+
+#### Parâmetros:
+
+- `context` (obrigatório): O `BuildContext` onde o overlay será inserido.
+- `duration` (obrigatório): Duração da animação.
+- `child` (obrigatório): O widget a ser exibido no overlay.
+- `alignment` (opcional): Alinhamento do widget no overlay. O padrão é `Alignment.center`.
+- `startAt` (opcional): Posição vertical inicial (como fração da altura da tela). O padrão é `0.5`.
+
+### `TicketAnimation.ticketDefault`
+
+Fornece um widget padrão com efeito shimmer para recibos.
+
+## Licença
+
+Este projeto é licenciado sob a licença MIT. Consulte o arquivo LICENSE para mais detalhes.
