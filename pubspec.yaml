@@ -1,5 +1,5 @@
 name: ticket_overlay
-description: "Simula animações de impressão de tickets POS em Flutter."
+description: "Package para efetuar uma animação que simula uma impressão de tickets POS."
 version: 0.0.1
 homepage: https://github.com/brasizza/ticket_overlay.gi
 
